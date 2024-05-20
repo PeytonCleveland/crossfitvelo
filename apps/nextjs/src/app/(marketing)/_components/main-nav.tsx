@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { cn } from "@crossfit-velo/ui";
 
@@ -10,6 +13,8 @@ export function MainNav({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
+  const pathname = usePathname();
+
   return (
     <nav
       className={cn(
@@ -24,7 +29,7 @@ export function MainNav({
           key={`${item.href}-${idx}`}
           className={cn(
             "text-sm font-medium transition-colors hover:text-primary",
-            idx !== 0 && "text-muted-foreground",
+            pathname != item.href && "text-muted-foreground",
           )}
         >
           {item.title}

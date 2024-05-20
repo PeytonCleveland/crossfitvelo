@@ -152,7 +152,7 @@ const Memberships = () => {
               Choose the membership plan that fits your fitness goals and start
               your fitness journey with us today. We also offer{" "}
               <Link
-                href="/#"
+                href="/memberships"
                 className="font-semibold text-primary underline underline-offset-2"
               >
                 special discounts

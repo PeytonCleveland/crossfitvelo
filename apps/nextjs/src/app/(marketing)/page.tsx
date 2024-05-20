@@ -4,9 +4,10 @@ import Link from "next/link";
 import { Balancer } from "react-wrap-balancer";
 
 import { cn } from "@crossfit-velo/ui";
-import { Button, buttonVariants } from "@crossfit-velo/ui/button";
+import { buttonVariants } from "@crossfit-velo/ui/button";
 import { Location, Star } from "@crossfit-velo/ui/icons";
 
+import About from "./_components/about";
 // import Faqs from "./_components/faqs";
 import Memberships from "./_components/memberships";
 
@@ -28,11 +29,6 @@ const bannerItems: string[] = [
   "CrossFit Affiliate",
   "Clean & Sanitary Facilities",
 ];
-
-interface AboutItem {
-  title: string;
-  description: string;
-}
 
 interface Coach {
   name: string;
@@ -59,29 +55,6 @@ const coaches: Coach[] = [
     title: "CF-L1 Certified Coach",
     bio: "James is a certified CrossFit coach with over 3 years of experience. He is passionate about helping others reach their fitness goals.",
     image: "/robert.jpg",
-  },
-];
-
-const aboutItems: AboutItem[] = [
-  {
-    title: "CrossFit Affiliate",
-    description:
-      "We are a CrossFit affiliate that provides top-tier training programs.",
-  },
-  {
-    title: "Top-Tier Equipment",
-    description:
-      "We have the best equipment to help you train and reach your fitness goals.",
-  },
-  {
-    title: "Professional Training Programs",
-    description:
-      "Our training programs are designed to help you reach your fitness goals.",
-  },
-  {
-    title: "24/7 Facility Access",
-    description:
-      "Our facility is open 24/7 for you to train and reach your fitness goals.",
   },
 ];
 
@@ -186,7 +159,7 @@ export default function Home() {
         </div>
       </div>
       <div className="h-12 w-full overflow-hidden bg-primary">
-        <span className="animate-infinite-scroll-mobile flex h-full w-full items-center gap-8 text-2xl font-semibold text-white md:animate-infinite-scroll">
+        <span className="flex h-full w-full animate-infinite-scroll-mobile items-center gap-8 text-2xl font-semibold text-white md:animate-infinite-scroll">
           {bannerItems.map((item) => (
             <React.Fragment key={item}>
               <p className="whitespace-nowrap font-mont text-base text-primary-foreground">
@@ -202,66 +175,9 @@ export default function Home() {
           ))}
         </span>
       </div>
-      <section className="relative w-full overflow-hidden bg-neutral-200">
-        <span className="absolute -bottom-[190px] -right-[150px] z-0 h-[400px] w-[400px] rotate-[120deg] opacity-30 md:-bottom-[250px] md:-right-[170px] md:h-[650px] md:w-[650px]">
-          <Image src="/arrows.png" priority layout="fill" alt="arrows" />
-        </span>
-        <div className="mx-auto w-full max-w-5xl px-8 py-20 md:py-28 xl:px-0">
-          <div className="grid w-full grid-cols-1 gap-0 md:grid-cols-2 md:gap-20">
-            <div className="group relative flex flex-1">
-              <span className="absolute -bottom-4 -left-4 z-0 h-full w-full transform bg-[url(/blue-bg.png)] bg-cover duration-300 group-hover:-translate-x-4 group-hover:translate-y-4" />
-              <span className="z-10 h-full w-full">
-                <Image
-                  src="/gym.avif"
-                  layout="fill"
-                  objectFit="cover"
-                  alt="CrossFit Velo"
-                />
-              </span>
-              <div className="absolute bottom-0 left-0 z-[11] flex h-0 w-full transform cursor-pointer items-center justify-between bg-background/95 px-4 duration-300 group-hover:h-16">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="hidden group-hover:block"
-                >
-                  Previous
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="hidden group-hover:block"
-                >
-                  Next
-                </Button>
-              </div>
-            </div>
-            <div className="flex flex-col gap-6">
-              <h2 className="font-mont text-4xl/[2.5rem] font-bold text-primary-foreground md:text-5xl/[3.25rem]">
-                Why Choose <br />
-                <span className="text-primary">CrossFit Velo</span>
-              </h2>
-              {aboutItems.map((item) => (
-                <div className="flex flex-col gap-2" key={item.title}>
-                  <div className="flex items-center gap-4">
-                    <Image
-                      src="/logomark-dark.png"
-                      width={24}
-                      height={24}
-                      alt="CrossFit Velo"
-                    />
-                    <h6 className="font-mont font-semibold text-primary-foreground md:text-lg">
-                      {item.title}
-                    </h6>
-                  </div>
-                  <p className="pl-10 text-sm text-primary-foreground/70 md:text-base">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+
+      <About />
+
       <section className="relative w-full overflow-hidden bg-background">
         <span className="absolute -left-[150px] -top-[190px] z-0 h-[400px] w-[400px] -rotate-[60deg] opacity-40 md:-left-[200px] md:-top-[260px] md:h-[650px] md:w-[650px]">
           <Image src="/arrows.png" priority layout="fill" alt="arrows" />
@@ -329,7 +245,7 @@ export default function Home() {
       </section> */}
 
       <section className="w-full overflow-hidden bg-background">
-        <div className="mx-auto w-full max-w-5xl space-y-12 px-8 pb-12 pt-20 xl:px-0">
+        <div className="mx-auto w-full max-w-5xl space-y-0 px-8 pb-0 pt-20 md:space-y-12 md:pb-12 xl:px-0">
           <div className="flex flex-col items-center gap-4">
             <h2 className="text-center font-mont text-4xl font-bold text-foreground md:text-5xl">
               What Our <span className="text-primary">Members</span> Say
@@ -348,7 +264,7 @@ export default function Home() {
               key={testimonial.name}
               className="flex h-fit min-w-[350px] flex-col items-center gap-4 bg-foreground p-6"
             >
-              <p className="mb-3 text-sm/[1.25rem] font-light text-primary-foreground/70">
+              <p className="mb-3 text-xs/[1rem] font-light text-primary-foreground/70 md:text-sm/[1.25rem]">
                 {testimonial.quote}
               </p>
 
@@ -363,7 +279,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <h6 className="font-mont text-base font-semibold text-primary-foreground">
+                    <h6 className="font-mont text-sm font-semibold text-primary-foreground md:text-base">
                       {testimonial.name}
                     </h6>
                     <div className="flex items-center gap-1">

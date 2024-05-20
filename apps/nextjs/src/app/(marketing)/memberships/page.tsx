@@ -47,14 +47,14 @@ const punchcards: Punchcard[] = [
     price: 45,
     description: "Purchase a punch card for three visits during class hours",
     highlights: ["Includes three (3) visits", "Access during class hours"],
-    link: "https://crossfitvelo.pushpress.com/landing/plans/plan_ad206cb2195c0a/login",
+    link: "https://crossfitvelo.pushpress.com/landing/plans/plan_5df41734c0e7e4/login",
   },
   {
     classes: 7,
     price: 100,
     description: "Purchase a punch card for seven visits during class hours",
     highlights: ["Includes seven (7) visits", "Access during class hours"],
-    link: "https://crossfitvelo.pushpress.com/landing/plans/plan_ad206cb2195c0a/login",
+    link: "https://crossfitvelo.pushpress.com/landing/plans/plan_4a789f077bdd7c/login",
   },
 ];
 
@@ -152,23 +152,35 @@ const specialtyMemberships: Membership[] = [
     name: "Student",
     price: 100,
     description: "Access to the gym and all equipment during class hours",
-    highlights: ["Access during class hours", "Access to community events"],
-    link: "https://crossfitvelo.pushpress.com/landing/plans/plan_0a9f9791539fff/login",
+    highlights: [
+      "Access during class hours",
+      "Access to community events",
+      "For students",
+    ],
+    link: "https://crossfitvelo.pushpress.com/landing/plans/plan_0dc0e5b01281ea/login",
   },
   {
     name: "Military/First Responder",
     price: 110,
     description: "Access to the gym and all equipment during class hours",
-    highlights: ["Access during class hours", "Access to community events"],
-    link: "https://crossfitvelo.pushpress.com/landing/plans/plan_0a9f9791539fff/login",
+    highlights: [
+      "Access during class hours",
+      "Access to community events",
+      "For military and first responders",
+    ],
+    link: "https://crossfitvelo.pushpress.com/landing/plans/plan_abf4367df8f2da/login",
   },
   {
     name: "Silver Sneakers",
     price: 100,
     description:
       "Access to the gym and all equipment during class hours for members 60+",
-    highlights: ["Access during class hours", "Access to community events"],
-    link: "https://crossfitvelo.pushpress.com/landing/plans/plan_0a9f9791539fff/login",
+    highlights: [
+      "Access during class hours",
+      "Access to community events",
+      "For members 60+",
+    ],
+    link: "https://crossfitvelo.pushpress.com/landing/plans/plan_361141b35ba9ce/login",
   },
 ];
 
@@ -184,22 +196,31 @@ export default function MembershipsPage() {
       <span className="absolute -right-[150px] -top-[170px] z-0 h-[400px] w-[400px] opacity-70 md:-right-[160px] md:-top-[250px] md:h-[650px] md:w-[650px]">
         <Image src="/arrows.png" priority layout="fill" alt="arrows" />
       </span>
-      <div className="container mx-auto flex flex-col gap-12 py-16">
+      <div className="container mx-auto flex flex-col gap-12 py-20">
         <h1
           className="animate-fade-up bg-gradient-to-br from-foreground to-muted-foreground bg-clip-text font-mont text-2xl font-semibold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-4xl"
-          style={{ animationDelay: "0.20s", animationFillMode: "forwards" }}
+          style={{ animationDelay: "0s", animationFillMode: "forwards" }}
         >
           Memberships
         </h1>
         <div className="flex flex-col gap-2">
-          <h4 className="font-mont text-2xl font-semibold text-primary">
+          <h4
+            className="animate-fade-up bg-primary bg-clip-text font-mont text-2xl font-semibold text-transparent opacity-0"
+            style={{ animationDelay: "0.20s", animationFillMode: "forwards" }}
+          >
             Punchcards
           </h4>
-          <p>
+          <p
+            className="animate-fade-up bg-white bg-clip-text text-transparent opacity-0"
+            style={{ animationDelay: "0.30s", animationFillMode: "forwards" }}
+          >
             Try out our classes with a punchcard. Available for 1, 3, or 7
-            classes. class punchcard.
+            classes.
           </p>
-          <div className="mt-4 grid grid-cols-1 gap-12 md:grid-cols-3">
+          <div
+            className="mt-4 grid animate-fade-up grid-cols-1 gap-12 opacity-0 md:grid-cols-3"
+            style={{ animationDelay: "0.40s", animationFillMode: "forwards" }}
+          >
             {punchcards.map((punchcard, index) => (
               <div
                 key={index}
@@ -282,7 +303,7 @@ export default function MembershipsPage() {
                 <span className="my-3 text-4xl font-semibold text-foreground">
                   {typeof membership.price === "number"
                     ? `$${membership.price}`
-                    : `$${membership.price.find((rate) => rate.period == Period.Month)?.price}/mo`}
+                    : `$${membership.price.find((rate: Rate) => rate.period == selected)?.price}/mo`}
                 </span>
                 <ul className="flex flex-col gap-1">
                   {membership.highlights?.map((highlight) => (
