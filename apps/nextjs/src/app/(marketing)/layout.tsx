@@ -1,8 +1,6 @@
-import { Suspense } from "react";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { auth } from "@clerk/nextjs";
 
 import { buttonVariants } from "@crossfit-velo/ui/button";
 import * as Icons from "@crossfit-velo/ui/icons";
@@ -29,37 +27,18 @@ export default function MarketingLayout(props: { children: ReactNode }) {
         <MobileDropdown />
         <MainNav />
         <div className="ml-auto flex items-center space-x-4">
-          <Suspense>
-            <DashboardLink />
-          </Suspense>
+          <Link
+            href="/memberships"
+            className={buttonVariants({ variant: "outline" })}
+          >
+            Join Today
+            <Icons.ChevronRight className="ml-1 h-4 w-4" />
+          </Link>
         </div>
       </nav>
 
       <main className="flex-1">{props.children}</main>
       <SiteFooter />
     </div>
-  );
-}
-
-function DashboardLink() {
-  const { userId, orgId } = auth();
-
-  if (!userId) {
-    return (
-      <Link href="/signin" className={buttonVariants({ variant: "outline" })}>
-        Join Today
-        <Icons.ChevronRight className="ml-1 h-4 w-4" />
-      </Link>
-    );
-  }
-
-  return (
-    <Link
-      href={`/${orgId ?? userId}`}
-      className={buttonVariants({ variant: "outline" })}
-    >
-      Dashboard
-      <Icons.ChevronRight className="ml-1 h-4 w-4" />
-    </Link>
   );
 }
