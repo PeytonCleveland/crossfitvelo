@@ -3,6 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
+
 import { Button } from "@crossfit-velo/ui/button";
 import {
   Popover,
@@ -11,7 +12,6 @@ import {
 } from "@crossfit-velo/ui/popover";
 import { ScrollArea } from "@crossfit-velo/ui/scroll-area";
 
-import { Search } from "~/app/(dashboard)/_components/search";
 import { navItems, siteConfig } from "~/app/config";
 import ThemeToggle from "./theme-toggle";
 
@@ -43,7 +43,6 @@ export function MobileDropdown() {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="z-40 mt-2 h-[calc(100vh-4rem)] w-screen animate-none rounded-none border-none transition-transform">
-        <Search />
         <ScrollArea className="py-8">
           {navItems.map((item) => (
             <Link
