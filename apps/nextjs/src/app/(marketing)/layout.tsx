@@ -3,13 +3,14 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { auth } from "@clerk/nextjs";
+
 import { buttonVariants } from "@crossfit-velo/ui/button";
 import * as Icons from "@crossfit-velo/ui/icons";
 
 import { siteConfig } from "~/app/config";
 import { SiteFooter } from "~/components/footer";
 import { MobileDropdown } from "~/components/mobile-nav";
-import { MainNav } from "../(dashboard)/_components/main-nav";
+import { MainNav } from "./_components/main-nav";
 
 export default function MarketingLayout(props: { children: ReactNode }) {
   return (
