@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Balancer } from "react-wrap-balancer";
 
 import { cn } from "@crossfit-velo/ui";
 import { Button, buttonVariants } from "@crossfit-velo/ui/button";
 import { Location, Star } from "@crossfit-velo/ui/icons";
 
-import Faqs from "./_components/faqs";
+// import Faqs from "./_components/faqs";
 import Memberships from "./_components/memberships";
 
 export const runtime = "edge";
@@ -100,11 +101,11 @@ const testimonials: Testimonial[] = [
     location: "Montgomery",
   },
   {
-    name: "Jane H.",
+    name: "Hailee L.",
     quote:
       "I love CrossFit Velo! The coaches are amazing and the community is supportive. I have made so many friends and reached my fitness goals.",
-    avatar: "/elijah.jpg",
-    location: "Birmingham",
+    avatar: "/hailee.jpg",
+    location: "Prattville",
   },
   {
     name: "Kahner C.",
@@ -114,25 +115,18 @@ const testimonials: Testimonial[] = [
     location: "Montgomery",
   },
   {
-    name: "John P.",
+    name: "Andrew B.",
     quote:
-      "CrossFit Velo has helped me reach my fitness goals and become a better athlete.",
-    avatar: "/susan.jpg",
-    location: "Montgomery",
+      "Joining CrossFit Velo two years ago was one of the best decisions I ever made!  It will challenge you regardless of your current fitness level.  The coaches put a heavy emphasis on safety and learning the correct form.  It's a great community full of members that encourage and support you to be your best!",
+    avatar: "/drew.jpg",
+    location: "Pratville",
   },
   {
     name: "Peyton C.",
     quote:
-      "I love CrossFit Velo! The coaches are amazing and the community is supportive. I have made so many friends and reached my fitness goals.",
-    avatar: "/susan.jpg",
+      "I've known the owner for years and he is a great guy. He is very knowledgeable and passionate about CrossFit. I highly recommend CrossFit Velo!",
+    avatar: "/peyton.jpg",
     location: "Deatsville",
-  },
-  {
-    name: "James V.",
-    quote:
-      "CrossFit Velo is the best gym I have ever been to. The coaches are amazing and the community is supportive. I have reached my fitness goals and made so many friends.",
-    avatar: "/susan.jpg",
-    location: "Huntsville",
   },
 ];
 
@@ -411,7 +405,12 @@ export default function Home() {
               Join CrossFit Velo today and start your fitness journey with us.
             </p>
             <div className="flex justify-center">
-              <Button>Choose Your Plan</Button>
+              <Link
+                href="/memberships"
+                className={buttonVariants({ variant: "default" })}
+              >
+                Choose Your Plan
+              </Link>
             </div>
           </div>
         </div>

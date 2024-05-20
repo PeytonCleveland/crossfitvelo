@@ -36,9 +36,7 @@ export const metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [
-      { url: "https://crossfit-velo-corp-lib.vercel.app/opengraph-image.png" },
-    ],
+    images: [{ url: "https://crossfitvelo.com/og-image.png" }],
     creator: "@Pcleveland1619",
   },
   metadataBase: new URL("https://crossfitvelo.com/"),

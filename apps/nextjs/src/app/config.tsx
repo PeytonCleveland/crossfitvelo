@@ -6,9 +6,7 @@ import * as Icons from "@crossfit-velo/ui/icons";
 export const siteConfig = {
   name: "CrossFit Velo",
   description:
-    "Next.js starter kit that includes everything you need to build a modern web application. Mobile application preconfigured, ready to go.",
-  github: "https://github.com/juliusmarminge/crossfit-velo-corp",
-  twitter: "https://twitter.com/jullerino",
+    "CrossFit Velo is a CrossFit Affiliate located in Millbrook, AL. We offer a variety of memberships to fit your needs.",
 };
 
 export const navItems = [

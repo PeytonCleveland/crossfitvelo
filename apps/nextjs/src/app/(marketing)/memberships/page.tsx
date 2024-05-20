@@ -184,7 +184,7 @@ export default function MembershipsPage() {
       <span className="absolute -right-[150px] -top-[170px] z-0 h-[400px] w-[400px] opacity-70 md:-right-[160px] md:-top-[250px] md:h-[650px] md:w-[650px]">
         <Image src="/arrows.png" priority layout="fill" alt="arrows" />
       </span>
-      <div className="container mx-auto flex flex-col gap-12 pt-16">
+      <div className="container mx-auto flex flex-col gap-12 py-16">
         <h1
           className="animate-fade-up bg-gradient-to-br from-foreground to-muted-foreground bg-clip-text font-mont text-2xl font-semibold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-4xl"
           style={{ animationDelay: "0.20s", animationFillMode: "forwards" }}
