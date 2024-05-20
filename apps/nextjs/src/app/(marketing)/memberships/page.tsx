@@ -331,7 +331,7 @@ export default function MembershipsPage() {
                 </h3>
                 <p className="text-foreground/80">{membership.description}</p>
                 <span className="my-3 text-4xl font-semibold text-foreground">
-                  {`$${membership.price}`}
+                  {`$${membership.price as number}`}
                 </span>
                 <ul className="flex flex-col gap-1">
                   {membership.highlights?.map((highlight) => (
@@ -345,7 +345,7 @@ export default function MembershipsPage() {
                   ))}
                 </ul>
                 <a
-                  href={membership.link}
+                  href={membership.link as string}
                   className={`${buttonVariants({ variant: "default" })} mt-auto gap-2 font-semibold`}
                 >
                   Purchase {membership.name}
