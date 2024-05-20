@@ -8,7 +8,7 @@ import { buttonVariants } from "@crossfit-velo/ui/button";
 import { Location, Star } from "@crossfit-velo/ui/icons";
 
 import About from "./_components/about";
-// import Faqs from "./_components/faqs";
+import Faqs from "./_components/faqs";
 import Memberships from "./_components/memberships";
 
 export const runtime = "edge";
@@ -245,10 +245,10 @@ export default function Home() {
       </section> */}
 
       <section className="w-full overflow-hidden bg-background">
-        <div className="mx-auto w-full max-w-5xl space-y-0 px-8 pb-0 pt-20 md:space-y-12 md:pb-12 xl:px-0">
+        <div className="mx-auto w-full max-w-5xl space-y-0 px-8 pb-12 pt-20 md:space-y-12 xl:px-0">
           <div className="flex flex-col items-center gap-4">
             <h2 className="text-center font-mont text-4xl font-bold text-foreground md:text-5xl">
-              What Our <span className="text-primary">Members</span> Say
+              What Our <span className="text-primary">Members Say</span>
             </h2>
             <p className="max-w-[800px] text-center text-sm text-foreground/70 md:text-base">
               <Balancer>
@@ -258,11 +258,14 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="flex -translate-x-[10%] items-end gap-8 pb-24">
-          {testimonials.map((testimonial) => (
+        <div className="flex gap-8 px-8 pb-24 md:-translate-x-[10%] md:items-end md:px-0">
+          {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              className="flex h-fit min-w-[350px] flex-col items-center gap-4 bg-foreground p-6"
+              className={cn(
+                "flex h-fit min-w-[350px] flex-col items-center gap-4 bg-foreground p-6",
+                index !== 2 && "hidden md:block",
+              )}
             >
               <p className="mb-3 text-xs/[1rem] font-light text-primary-foreground/70 md:text-sm/[1.25rem]">
                 {testimonial.quote}
@@ -309,7 +312,7 @@ export default function Home() {
 
       <Memberships />
 
-      {/* <Faqs /> */}
+      <Faqs />
 
       <section className="w-full bg-primary bg-[url(/pattern.png)] bg-cover bg-center">
         <div className="mx-auto w-full max-w-5xl space-y-16 px-8 py-12 xl:px-0">

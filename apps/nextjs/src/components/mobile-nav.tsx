@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
+import { cn } from "@crossfit-velo/ui";
 import { Button } from "@crossfit-velo/ui/button";
 import {
   Popover,
@@ -13,10 +14,11 @@ import {
 import { ScrollArea } from "@crossfit-velo/ui/scroll-area";
 
 import { navItems, siteConfig } from "~/app/config";
-import ThemeToggle from "./theme-toggle";
 
 export function MobileDropdown() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   React.useEffect(() => {
     if (isOpen) {
@@ -42,22 +44,28 @@ export function MobileDropdown() {
           />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="z-40 mt-2 h-[calc(100vh-4rem)] w-screen animate-none rounded-none border-none transition-transform">
+      <PopoverContent className="z-40 mt-2 h-[calc(100vh-4rem)] w-screen animate-none rounded-none border-none bg-background transition-transform">
         <ScrollArea className="py-8">
           {navItems.map((item) => (
-            <Link
+            <Button
               key={item.href}
-              href={item.href}
+              variant="link"
+              onClick={() => {
+                router.push(item.href);
+                setIsOpen(false);
+              }}
               // className="mt-2 flex items-center text-lg font-semibold sm:text-sm"
-              className="flex py-1 text-base font-medium text-muted-foreground transition-colors hover:text-primary"
+              className={cn(
+                "mt-2 flex items-center text-lg font-semibold sm:text-sm",
+                pathname === item.href
+                  ? "text-primary"
+                  : "text-foreground-muted",
+              )}
             >
               {item.title}
-            </Link>
+            </Button>
           ))}
         </ScrollArea>
-        <div className="border-t pt-4">
-          <ThemeToggle side="top" align="start" />
-        </div>
       </PopoverContent>
     </Popover>
   );
