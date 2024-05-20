@@ -2,10 +2,10 @@ import "react-image-crop/dist/ReactCrop.css";
 import "~/styles/globals.css";
 
 import { Inter, Montserrat } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
+import { Analytics } from "@vercel/analytics/react";
+
 import { cn } from "@crossfit-velo/ui";
 import { Toaster } from "@crossfit-velo/ui/toaster";
-import { Analytics } from "@vercel/analytics/react";
 
 import { TailwindIndicator } from "~/components/tailwind-indicator";
 import { ThemeProvider } from "~/components/theme-provider";
@@ -47,24 +47,22 @@ export const metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <>
-      <ClerkProvider>
-        <html lang="en" suppressHydrationWarning>
-          <body
-            className={cn(
-              "min-h-screen font-sans antialiased",
-              fontSans.variable,
-              fontMontserrat.variable,
-            )}
-          >
-            <ThemeProvider attribute="class" defaultTheme="dark">
-              {props.children}
-              <TailwindIndicator />
-            </ThemeProvider>
-            <Analytics />
-            <Toaster />
-          </body>
-        </html>
-      </ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={cn(
+            "min-h-screen font-sans antialiased",
+            fontSans.variable,
+            fontMontserrat.variable,
+          )}
+        >
+          <ThemeProvider attribute="class" defaultTheme="dark">
+            {props.children}
+            <TailwindIndicator />
+          </ThemeProvider>
+          <Analytics />
+          <Toaster />
+        </body>
+      </html>
     </>
   );
 }
