@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "npm run with-env next build",
+    "build": "next build",
     "clean": "git clean -xdf .next .turbo node_modules",
     "dev": "npm run with-env next dev",
     "lint": "next lint",
