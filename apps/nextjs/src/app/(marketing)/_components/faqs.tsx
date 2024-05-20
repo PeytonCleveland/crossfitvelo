@@ -63,16 +63,16 @@ const Question = ({ question, answer }: FaqItem) => {
   return (
     <div className="flex flex-col">
       <button
-        className="flex items-center justify-between border-t border-foreground/10 py-6"
+        className="flex items-center justify-between gap-6 border-t border-foreground/10 py-6"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <h3 className="font-mont text-lg font-semibold text-foreground">
+        <h3 className="text-left font-mont text-lg font-semibold text-foreground">
           {question}
         </h3>
         {isOpen ? (
-          <Minus className="h-6 w-6 transform text-primary" />
+          <Minus className="min-h-6 min-w-6 transform text-primary" />
         ) : (
-          <Add className="w-6transform h-6 text-primary" />
+          <Add className="min-h-6 min-w-6 transform text-primary" />
         )}
       </button>
 
