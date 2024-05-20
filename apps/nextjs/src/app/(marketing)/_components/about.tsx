@@ -19,17 +19,17 @@ const aboutItems: AboutItem[] = [
   {
     title: "Top-Tier Equipment",
     description:
-      "We have the best equipment to help you train and reach your fitness goals.",
+      "We have top-tier equipment that is maintained and updated regularly.",
   },
   {
     title: "Professional Training Programs",
     description:
-      "Our training programs are designed to help you reach your fitness goals.",
+      "Our training programs are designed by professionals to help you reach your goals.",
   },
   {
     title: "24/7 Facility Access",
     description:
-      "Our facility is open 24/7 for you to train and reach your fitness goals.",
+      "Our facility is open 24/7 so you can train on your own schedule.",
   },
 ];
 
