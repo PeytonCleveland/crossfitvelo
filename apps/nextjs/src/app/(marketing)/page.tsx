@@ -107,11 +107,11 @@ const testimonials: Testimonial[] = [
     location: "Birmingham",
   },
   {
-    name: "James Q.",
+    name: "Kahner C.",
     quote:
-      "CrossFit Velo is the best gym I have ever been to. The coaches are amazing and the community is supportive. I have reached my fitness goals and made so many friends. The coaches are amazing and the community is supportive.",
-    avatar: "/susan.jpg",
-    location: "Huntsville",
+      "I have been attending this facility for years. The climate is positive and the people encouraging. The best part is everyone is welcomed. Age, body type, profession, and so on, I've seen every sort join and enjoy the experience. I also want to add this box focuses first on form and safety before even considering the rest. I can't even count the number of people who started here with just an empty bar and now can easily lift their own body weight or more!",
+    avatar: "/kahner.png",
+    location: "Montgomery",
   },
   {
     name: "John P.",
@@ -121,11 +121,11 @@ const testimonials: Testimonial[] = [
     location: "Montgomery",
   },
   {
-    name: "Jane G.",
+    name: "Peyton C.",
     quote:
       "I love CrossFit Velo! The coaches are amazing and the community is supportive. I have made so many friends and reached my fitness goals.",
     avatar: "/susan.jpg",
-    location: "Birmingham",
+    location: "Deatsville",
   },
   {
     name: "James V.",
@@ -354,7 +354,7 @@ export default function Home() {
               key={testimonial.name}
               className="flex h-fit min-w-[350px] flex-col items-center gap-4 bg-foreground p-6"
             >
-              <p className="mb-3 text-base/[1.25rem] font-light text-primary-foreground/70">
+              <p className="mb-3 text-sm/[1.25rem] font-light text-primary-foreground/70">
                 {testimonial.quote}
               </p>
 
@@ -399,7 +399,7 @@ export default function Home() {
 
       <Memberships />
 
-      <Faqs />
+      {/* <Faqs /> */}
 
       <section className="w-full bg-primary bg-[url(/pattern.png)] bg-cover bg-center">
         <div className="mx-auto w-full max-w-5xl space-y-16 px-8 py-12 xl:px-0">

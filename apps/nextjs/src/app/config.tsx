@@ -1,6 +1,7 @@
 import type { Route } from "next";
-import * as Icons from "@crossfit-velo/ui/icons";
 import { Component, CreditCard, Globe } from "lucide-react";
+
+import * as Icons from "@crossfit-velo/ui/icons";
 
 export const siteConfig = {
   name: "CrossFit Velo",
@@ -15,26 +16,26 @@ export const navItems = [
     href: "/",
     title: "Home",
   },
-  {
-    href: "/about",
-    title: "About",
-  },
+  // {
+  //   href: "/about",
+  //   title: "About",
+  // },
   {
     href: "/memberships",
     title: "Memberships",
   },
-  {
-    href: "drop-in",
-    title: "Drop-in",
-  },
-  {
-    href: "news",
-    title: "News",
-  },
-  {
-    href: "/contact",
-    title: "Contact",
-  },
+  // {
+  //   href: "drop-in",
+  //   title: "Drop-in",
+  // },
+  // {
+  //   href: "news",
+  //   title: "News",
+  // },
+  // {
+  //   href: "/contact",
+  //   title: "Contact",
+  // },
 ] satisfies { href: Route; title: string }[];
 
 export const marketingFeatures = [
